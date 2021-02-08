@@ -34,6 +34,7 @@ ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
   facet_wrap (~ continent, ncol = 2) +
   theme(legend.position = "none")
 ```
+
 It looks like they all have a similar range to each other.
 
 ### Exercise 2
@@ -56,33 +57,52 @@ ggplot(data = plastic_waste,
                      fill = continent)) +
   geom_density(alpha = 0.1)
 ```
+
+I think we defined color and fill of the curves by mapping aesthetics because but alpha as a characteristic because the alpha affects everything as a whole but the color and fill are specific to given chart elements.
+
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 3 here.
+```{r}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_boxplot()
+```
 
 ### Exercise 4
 
 Remove this text, and add your answer for Exercise 4 here.
 
 ```{r plastic-waste-violin}
-# insert code here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_violin()
 ```
+
+The violin plot makes the shape of the distribution more apparent. 
 
 ### Exercise 5
 
 Remove this text, and add your answer for Exercise 5 here.
 
 ```{r plastic-waste-mismanaged}
-# insert code here
+ggplot(data = plastic_waste,
+       mapping = aes(x = mismanaged_plastic_waste_per_cap, y = plastic_waste_per_cap)) +
+       geom_point()
 ```
 
 ### Exercise 6
 
-Remove this text, and add your answer for Exercise 6 here.
 
 ```{r plastic-waste-mismanaged-continent}
-# insert code here
+ggplot(data = plastic_waste,
+       mapping = aes(x = mismanaged_plastic_waste_per_cap, y = plastic_waste_per_cap, color = continent)) +
+       geom_point()
 ```
+
+In Europe, it appears that there's a strong relationship whereby the more plastic waste per capita, the more mismanaged plastic waste there is. 
+Other continents seem to have relationships that are less steep but are similar in that more waste is related to more mismanaged waste.
 
 ### Exercise 7
 
