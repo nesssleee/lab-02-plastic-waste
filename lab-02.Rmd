@@ -1,7 +1,7 @@
 ---
 title: "Lab 02 - Plastic waste"
-author: "Insert your name here"
-date: "Insert date here"
+author: "Vanessa Gill"
+date: "02/08/2021"
 output: github_document
 ---
 
@@ -19,18 +19,43 @@ plastic_waste <- read_csv("data/plastic-waste.csv")
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
-
-```{r plastic-waste-continent}
-# insert code here
+```{r plastic-waste-all-continent}
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
+  geom_histogram(binwidth = 0.2)
+plastic_waste %>%
+  filter(plastic_waste_per_cap > 3.5)
 ```
+
+I hadn't given it much thought but I didn't know plastic waste was so high in Trinidad and Tobago. Maybe it's because their islands which makes waste management more difficult.
+
+```{r plastic-waste-by-continent}
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
+  geom_histogram(binwidth = 0.02) +
+  facet_wrap (~ continent, ncol = 2) +
+  theme(legend.position = "none")
+```
+It looks like they all have a similar range to each other.
 
 ### Exercise 2
 
 ```{r plastic-waste-density}
-# insert code here
+ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
+  geom_density()
 ```
 
+```{r}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent)) +
+  geom_density()
+```
+```{r}
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent, 
+                     fill = continent)) +
+  geom_density(alpha = 0.1)
+```
 ### Exercise 3
 
 Remove this text, and add your answer for Exercise 3 here.
