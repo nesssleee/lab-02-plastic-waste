@@ -2,7 +2,7 @@
 title: "Lab 02 - Plastic waste"
 author: "Vanessa Gill"
 date: "02/08/2021"
-output: github_document
+output: html_document
 ---
 
 ## Load packages and data
