@@ -71,7 +71,6 @@ ggplot(data = plastic_waste,
 
 ### Exercise 4
 
-Remove this text, and add your answer for Exercise 4 here.
 
 ```{r plastic-waste-violin}
 ggplot(data = plastic_waste, 
@@ -84,7 +83,6 @@ The violin plot makes the shape of the distribution more apparent.
 
 ### Exercise 5
 
-Remove this text, and add your answer for Exercise 5 here.
 
 ```{r plastic-waste-mismanaged}
 ggplot(data = plastic_waste,
